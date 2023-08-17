@@ -1,0 +1,68 @@
+/* Fonts */
+
+/* || General page styles */
+html {
+    font-size: 16px;
+}
+
+/* || Layout */
+/* || header */
+header {
+    text-align: center;
+
+}
+
+/* || nav */
+nav {
+
+}
+
+nav ul {  /* sticky might be good */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* gap: 1%; */
+    font-family: sans-serif;
+    padding: 0;
+}
+
+nav li {
+    flex: auto;
+    list-style-type: none;
+    font-size: 1.25rem; /* 16px * 1.25 = 20px */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background: black;
+    color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+    line-height: 2;  /* 1.25 * font-size = 40px */
+}
+
+nav li a {
+}
+
+nav li a:link {
+    text-decoration: none;
+}
+
+nav li a:visited {
+    background: red;
+}
+
+nav li a:focus,
+nav li a:hover {
+    background: blue;
+}
+
+nav li a:active {
+    background: red;
+}
+
+/* || footer */
+
+/* || section */
+
+/* || article */
+
