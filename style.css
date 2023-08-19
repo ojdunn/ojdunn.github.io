@@ -3,13 +3,42 @@
 /* || General page styles */
 html {
     font-size: 16px;
+    /* background: no-repeat linear-gradient(180deg, rgba(222,202,6,1) 0%, rgba(221,158,13,1) 50%, rgba(51,235,3,1) 100%); */
+    /* dark mode - add option to read browser settings for colors? */
+    /* light mode */
+    /* background: white; */
+    /* color: black; */
+    /* Gruvbox dark */
+    background: #282828;
+    /* background: #32302f; */ /* soft contrast */
+    color: #ebdbb2;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h1, h2 {
+    text-align: center;
 }
 
 /* || Layout */
 /* || header */
 header {
     text-align: center;
-
+    background: no-repeat linear-gradient(180deg, rgba(222,202,6,1) 0%, rgba(221,158,13,1) 50%, rgba(51,235,3,1) 100%);
+    text-shadow: 1px 1px 1px black;
+    padding: 10px 0;
+    color: blue;
 }
 
 /* || nav */
@@ -20,44 +49,84 @@ nav {
 nav ul {  /* sticky might be good */
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    /* gap: 1%; */
+    /* justify-content: space-around; */
+    gap: 1%;
     font-family: sans-serif;
-    padding: 0;
+    padding: 0;  /* Remove list padding */
 }
 
 nav li {
-    flex: auto;
+    flex: 1 9.375rem;
     list-style-type: none;
     font-size: 1.25rem; /* 16px * 1.25 = 20px */
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background: black;
-    color: white;
-    border: 2px solid green;
-    border-radius: 5px;
     line-height: 2;  /* 1.25 * font-size = 40px */
+    background: blue;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    text-shadow: 2px 2px 2px black;
+    /* 3D box effect */
+    background-image: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.3) 30% 100%);
+    box-shadow: 3px 3px 10px black,
+    -3px -3px 5px rgba(0, 0, 0, 0.7) inset,
+    3px 3px 5px rgba(255, 255, 255, 0.7) inset;
 }
 
 nav li a {
+
 }
 
-nav li a:link {
+nav li a:link {  /* don't change if not a link */
+    color: white;
+    /* Make whole box a link - padding not needed? */
+    display: block; /* Background area to be clicked */
+    /* padding: auto; */
+    /* padding: 0 20px; */  /* left/right padding */
     text-decoration: none;
+    border-radius: 5px;
+}
+nav li a:visited {
+
 }
 
 nav li a:visited {
     background: red;
+    border: 1px solid darkred;
+    /* 3D box effect */
+    background-image: linear-gradient(to top left, rgba(0,0,0,0), rgba(0,0,0,0.3) 30% 100%);
+    box-shadow: 3px 3px 5px black,
+    -5px -5px 5px rgba(255, 255, 255, 0.7) inset,
+    5px 5px 5px rgba(0, 0, 0, 0.7) inset;
+}
+
+nav li a:focus {
+
+}
+
+nav li a:hover {
+
 }
 
 nav li a:focus,
 nav li a:hover {
     background: blue;
+    /* 3D box effect - box hovers up a bit more */
+    background-image: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.3) 30% 100%);
+    box-shadow: 5px 5px 30px black,
+    -5px -5px 5px rgba(0, 0, 0, 0.7) inset,
+    5px 5px 5px rgba(255, 255, 255, 0.7) inset;
 }
 
 nav li a:active {
     background: red;
+    border: 1px solid darkred;
+    /* 3D box effect - pushed down, box pops inward */
+    background-image: linear-gradient(to top left, rgba(0,0,0,0), rgba(0,0,0,0.3) 30% 100%);
+    box-shadow: 3px 3px 5px black,
+    -5px -5px 5px rgba(255, 255, 255, 0.7) inset,
+    5px 5px 5px rgba(0, 0, 0, 0.7) inset;
 }
 
 /* || footer */
