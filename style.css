@@ -1,14 +1,39 @@
 /* Fonts */
 
 /* || General page styles */
+
+/* Color scheme 1: Gruvbox dark */
+/* bright: */
+/* black:   '#928374' */
+/* red:     '#fb4934' */
+/* green:   '#b8bb26' */
+/* yellow:  '#fabd2f' */
+/* blue:    '#83a598' */
+/* magenta: '#d3869b' */
+/* cyan:    '#8ec07c' */
+/* white:   '#ebdbb2' */
+/* normal: */
+/* black:   '#282828' */
+/* red:     '#cc241d' */
+/* green:   '#98971a' */
+/* yellow:  '#d79921' */
+/* blue:    '#458588' */
+/* magenta: '#b16286' */
+/* cyan:    '#689d6a' */
+/* white:   '#a89984' */
+/* dim: */
+/* black:   '#32302f' */
+/* red:     '#9d0006' */
+/* green:   '#79740e' */
+/* yellow:  '#b57614' */
+/* blue:    '#076678' */
+/* magenta: '#8f3f71' */
+/* cyan:    '#427b58' */
+/* white:   '#928374' */
+
 html {
     font-size: 16px;
-    /* background: no-repeat linear-gradient(180deg, rgba(222,202,6,1) 0%, rgba(221,158,13,1) 50%, rgba(51,235,3,1) 100%); */
-    /* dark mode - add option to read browser settings for colors? */
-    /* light mode */
-    /* background: white; */
-    /* color: black; */
-    /* Gruvbox dark */
+    /* using dark mode - add option to read browser settings for colors? */
     background: #282828;
     /* background: #32302f; */ /* soft contrast */
     color: #ebdbb2;
@@ -16,15 +41,25 @@ html {
 
 h1 {
     font-size: 2rem;
+    color: #ebdbb2;
 }
 
 h2 {
     font-size: 1.5rem;
     margin: 1.25rem;
+    color: #689d6a;
 }
 
 p {
     font-size: 1rem;
+}
+
+a {
+    color: #458588;
+}
+
+a:active {
+    color: #cc241d;
 }
 
 h1, h2 {
@@ -35,10 +70,9 @@ h1, h2 {
 /* || header */
 header {
     text-align: center;
-    background: no-repeat linear-gradient(180deg, rgba(222,202,6,1) 0%, rgba(221,158,13,1) 50%, rgba(51,235,3,1) 100%);
+    background: linear-gradient(180deg, rgba(215,153,33,1) 0%, rgba(69,133,136,1) 50%, rgba(177,98,134,1) 100%);
     text-shadow: 1px 1px 1px black;
     padding: 10px 0;
-    color: blue;
 }
 
 /* || nav */
@@ -49,7 +83,6 @@ nav {
 nav ul {  /* sticky might be good */
     display: flex;
     align-items: center;
-    /* justify-content: space-around; */
     gap: 1%;
     font-family: sans-serif;
     padding: 0;  /* Remove list padding */
@@ -63,8 +96,8 @@ nav li {
     text-align: center;
     text-decoration: none;
     line-height: 2;  /* 1.25 * font-size = 40px */
-    background: blue;
-    border: 1px solid darkblue;
+    background: #458588;
+    border: 1px solid #076678;
     border-radius: 5px;
     text-shadow: 2px 2px 2px black;
     /* 3D box effect */
@@ -79,7 +112,8 @@ nav li a {
 }
 
 nav li a:link {  /* don't change if not a link */
-    color: white;
+    color: #ebdbb2;
+    /* color: #a89984; */
     /* Make whole box a link - padding not needed? */
     display: block; /* Background area to be clicked */
     /* padding: auto; */
@@ -87,13 +121,14 @@ nav li a:link {  /* don't change if not a link */
     text-decoration: none;
     border-radius: 5px;
 }
+
 nav li a:visited {
 
 }
 
 nav li a:visited {
-    background: red;
-    border: 1px solid darkred;
+    background: #458588;
+    border: 1px solid #9d0006;
     /* 3D box effect */
     background-image: linear-gradient(to top left, rgba(0,0,0,0), rgba(0,0,0,0.3) 30% 100%);
     box-shadow: 3px 3px 5px black,
@@ -111,7 +146,7 @@ nav li a:hover {
 
 nav li a:focus,
 nav li a:hover {
-    background: blue;
+    background: #458588;
     /* 3D box effect - box hovers up a bit more */
     background-image: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.3) 30% 100%);
     box-shadow: 5px 5px 30px black,
@@ -120,8 +155,8 @@ nav li a:hover {
 }
 
 nav li a:active {
-    background: red;
-    border: 1px solid darkred;
+    background: #cc241d;
+    border: 1px solid #9d0006;
     /* 3D box effect - pushed down, box pops inward */
     background-image: linear-gradient(to top left, rgba(0,0,0,0), rgba(0,0,0,0.3) 30% 100%);
     box-shadow: 3px 3px 5px black,
