@@ -127,9 +127,10 @@ nav li a:visited {
 }
 
 nav li a:visited {
-    background: #458588;
+    color: #ebdbb2;
+    background: #cc241d;
     border: 1px solid #9d0006;
-    /* 3D box effect */
+    /* 3D box effect - pushed down, box pops inward */
     background-image: linear-gradient(to top left, rgba(0,0,0,0), rgba(0,0,0,0.3) 30% 100%);
     box-shadow: 3px 3px 5px black,
     -5px -5px 5px rgba(255, 255, 255, 0.7) inset,
@@ -165,8 +166,52 @@ nav li a:active {
 }
 
 /* || footer */
-
 /* || section */
-
 /* || article */
+
+/* || Resume */
+.resume {
+}
+
+.resume ul {
+    /* float: right; */
+    display: flex;
+    /* padding-left: 2rem; */
+    list-style-type: none;
+    /* Flexbox */
+    justify-content: space-between;
+}
+
+.resume li {
+    /* padding-left: 2rem; */
+    background-image: url('./media/phone.ico');
+    background-position: 0 0;
+    /* background-size: 1.6rem 1.6rem; */
+    background-repeat: no-repeat;
+}
+
+/* .resume li:nth-child(1) { */
+/*     /1* list-style-image: url('./media/phone.ico'); *1/ */
+/*     background-image: url('./media/phone.ico'); */
+/*     background-position: 0 0; */
+/*     background-size: 1.6rem 1.6rem; */
+/*     background-repeat: no-repeat; */
+
+/* } */
+
+/* .resume li:nth-child(2) { */
+/*     list-style-image: url('./media/mail.ico'); */
+/* } */
+
+/* .resume li:nth-child(3) { */
+/*     list-style-image: url('./media/location.ico'); */
+/* } */
+
+/* .resume li:nth-child(4) { */
+/*     list-style-image: url('./media/github.ico'); */
+/* } */
+
+/* .resume li:nth-child(5) { */
+/*     list-style-image: url('./media/linkedin.ico'); */
+/* } */
 
