@@ -171,47 +171,174 @@ nav li a:active {
 
 /* || Resume */
 .resume {
+    /* display: grid; */
+    /* grid-template-columns: repeat(16, minmax(0, 1fr)); */
+    /* grid-template-rows: repeat(21, minmax(0, 1fr)); */
+    /* gap: 10px; */
+    background: white;
+    color: black;
+    /* ANCI Letter sized */
+    /* width: 8.5in; */
+    /* height: 11in; */
+    /* margin: 0.5in 0.5in; */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* align-items: center; */
+    /* ANCI Letter sized (2 pages) */
+    width: 8.5in;
+    /* height: 22in; */
+    margin: 0 auto;  /* center resume in viewport */
+}
+
+section {
+    /* margin: 0 auto; */
+    /* margin: 0.5in 0.5in; */
+}
+
+.resume-p1,
+.resume-p2 {
+    display: grid;
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+    grid-template-rows: repeat(21, minmax(0, 1fr));
+    gap: 10px;  /* Might make borders ugly */
+    /* ANCI Letter sized */
+    /* width: 8.5in; */
+    height: 11in;
+    margin: 0in 0.5in;
+    /* margin-top: 0.5in; */
+    margin-bottom: 0.5in;  /* Must put top margin here? conflict with nav? */
+}
+
+.resume-p1 {
+    /* margin-bottom: 10px; */
+}
+
+.resume-p2 {
+    margin-bottom: 0.5in;
+}
+
+.resume h1,
+.resume h2 {
+    margin: 0 0;
+    color: black;
+}
+
+.resume h1 {
+    font-size: 40px;
+    padding: 0;
+}
+
+.resume h2 {
+    font-size: 20px;
 }
 
 .resume ul {
     /* float: right; */
     display: flex;
     /* padding-left: 2rem; */
+    padding-left: 0;
     list-style-type: none;
     /* Flexbox */
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .resume li {
-    /* padding-left: 2rem; */
-    background-image: url('./media/phone.ico');
-    background-position: 0 0;
-    /* background-size: 1.6rem 1.6rem; */
+    padding-left: 1.25rem;
+    background-position: 0 50%;
     background-repeat: no-repeat;
+    line-height: 2;
 }
 
-/* .resume li:nth-child(1) { */
-/*     /1* list-style-image: url('./media/phone.ico'); *1/ */
-/*     background-image: url('./media/phone.ico'); */
-/*     background-position: 0 0; */
-/*     background-size: 1.6rem 1.6rem; */
-/*     background-repeat: no-repeat; */
+.resume li:nth-child(1) {
+    background-image: url('./media/phone.ico');
+}
 
-/* } */
+.resume li:nth-child(2) {
+    padding-left: 1.5rem;
+    background-image: url('./media/mail.ico');
+}
 
-/* .resume li:nth-child(2) { */
-/*     list-style-image: url('./media/mail.ico'); */
-/* } */
+.resume li:nth-child(3) {
+    padding-left: 1rem;
+    background-image: url('./media/location.ico');
+}
 
-/* .resume li:nth-child(3) { */
-/*     list-style-image: url('./media/location.ico'); */
-/* } */
+.resume li:nth-child(4) {
+    padding-left: 1.5rem;
+    background-image: url('./media/github.ico');
+}
 
-/* .resume li:nth-child(4) { */
-/*     list-style-image: url('./media/github.ico'); */
-/* } */
+.resume li:nth-child(5) {
+    background-image: url('./media/linkedin.ico');
+}
 
-/* .resume li:nth-child(5) { */
-/*     list-style-image: url('./media/linkedin.ico'); */
-/* } */
+.resume-header {
+    grid-column: 1 / 17;
+    grid-row: 1 / 5;
+    margin-top: 0.5in;  /* Must put top margin here? conflict with nav? */
+    border-bottom: solid 1px black;
+}
 
+.resume-education {
+    grid-column: 1 / 4;
+    grid-row: 5 / 12;
+    /* border: 1px solid black; */
+    border-right: 1px solid black;
+    border-bottom: solid 1px black;
+}
+
+.resume-objective {
+    grid-column: 4 / 17;
+    grid-row: 5 / 7;
+    /* border: 1px solid black; */
+    border-bottom: solid 1px black;
+}
+
+.resume-experience {
+    grid-column: 4 / 17;
+    grid-row: 7 / 22;
+    /* border: 1px solid black; */
+}
+
+.resume-languages {
+    grid-column: 1 / 4;
+    grid-row: 12 / 22;
+    /* border: 1px solid black; */
+    border-right: 1px solid black;
+    border-bottom: solid 1px black;
+}
+
+/* Resume page 2 */
+.resume-experience2 {
+    grid-column: 4 / 17;
+    grid-row: 1 / 13;
+    /* border: 1px solid black; */
+}
+
+.resume-software {
+    grid-column: 1 / 4;
+    grid-row: 1 / 7;
+    /* border: 1px solid black; */
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.resume-skills {
+    grid-column: 1 / 4;
+    grid-row: 7 / 15;
+    /* border: 1px solid black; */
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.resume-interests {
+    grid-column: 1 / 4;
+    grid-row: 15 / 22;
+    /* border: 1px solid black; */
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.resume-references {
+    grid-column: 4 / 17;
+    grid-row: 12 / 22;
+    border-top: 1px solid black;
+    /* border: 1px solid black; */
+}
