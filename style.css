@@ -1,4 +1,11 @@
 /* Fonts */
+@font-face {
+    font-family: 'work-sans-regular';
+    src: url('./fonts/worksans-variablefont_wght-webfont.woff2') format('woff2'),
+         url('./fonts/worksans-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* || General page styles */
 
@@ -31,12 +38,17 @@
 /* cyan:    '#427b58' */
 /* white:   '#928374' */
 
+/* Color scheme 2: light TODO */
+
 html {
     font-size: 16px;
     /* using dark mode - add option to read browser settings for colors? */
     background: #282828;
     /* background: #32302f; */ /* soft contrast */
     color: #ebdbb2;
+    max-width: 1000px;
+    /* Center entire page */
+    margin: 0 auto;
 }
 
 h1 {
@@ -166,14 +178,23 @@ nav li a:active {
 }
 
 /* || footer */
+/* footer {
+    TODO - Center
+} */
+
 /* || section */
 /* || article */
 
 /* || Resume 
 font: 10-12 pt (13-16px) for normal text, 14-16 pt (19-22px) for headings and titles
 TODO add a custom font
-TODO add language icons
+
+ANCI Letter sized:
+    width: 8.5in;
+    height: 11in;
+    margin: 0.5in 0.5in; 
 */
+
 .resume {
     /* display: grid; */
     /* grid-template-columns: repeat(16, minmax(0, 1fr)); */
@@ -181,10 +202,6 @@ TODO add language icons
     /* gap: 10px; */
     background: white;
     color: black;
-    /* ANCI Letter sized */
-    /* width: 8.5in; */
-    /* height: 11in; */
-    /* margin: 0.5in 0.5in; */
     /* margin: 0; */
     /* padding: 0; */
     /* align-items: center; */
@@ -192,10 +209,16 @@ TODO add language icons
     width: 8.5in;
     /* height: 22in; */
     margin: 0 auto;  /* center resume in viewport */
+    font-family: 'work-sans-regular', serif;
 }
 
 .resume p {
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
+    font-size: 0.9375rem;
+}
+
+.resume-p-emphasis {
+    font-weight: bold;
 }
 
 .resume-p1,
@@ -230,20 +253,20 @@ TODO add language icons
 }
 
 .resume h1 {
-    font-size: 30px;
+    /* font-size: 32px; */
     padding: 0;
 }
 
 .resume h2 {
-    font-size: 1.375rem;
+    font-size: 1.375rem; /* 22px for 16pxrem */
 }
 
 .resume-inner {
-    padding: 10px 0 10px 10px; 
+    padding: 10px 0 10px 10px; /* No padding on right */
 }
 
 .resume-outer {
-    padding: 10px 10px 10px 0;
+    padding: 10px 10px 10px 0; /* No padding on left */
 }
 
 .resume-header ul {
@@ -252,39 +275,41 @@ TODO add language icons
     /* padding-left: 2rem; */
     padding-left: 0;
     list-style-type: none;
-    /* Flexbox */
+    /* Flexbox properties */
     justify-content: space-around;
 }
 
 .resume-header li {
-    font-size: 15px;
-    padding-left: 1.25rem;
+    /* font-size: 0.9375rem; */
+    padding-left: 1.5rem;
     background-position: 0 50%;
     background-repeat: no-repeat;
-    line-height: 2;
+    background-size: 1.5rem auto;
+    line-height: 3;
 }
 
 .resume-header li:nth-child(1) {
-    background-image: url('./media/phone.ico');
+    background-image: url('./media/phone.png');
 }
 
 .resume-header li:nth-child(2) {
-    padding-left: 1.5rem;
-    background-image: url('./media/mail.ico');
+    padding-left: 2rem;
+    background-image: url('./media/email2.png');
 }
 
 .resume-header li:nth-child(3) {
-    padding-left: 1rem;
-    background-image: url('./media/location.ico');
+    padding-left: 1.6rem;
+    background-image: url('./media/location.png');
 }
 
 .resume-header li:nth-child(4) {
-    padding-left: 1.5rem;
-    background-image: url('./media/github.ico');
+    padding-left: 1.75rem;
+    background-image: url('./media/github.png');
 }
 
 .resume-header li:nth-child(5) {
-    background-image: url('./media/linkedin.ico');
+    padding-left: 1.75rem;
+    background-image: url('./media/linkedin.png');
 }
 
 .resume-header {
@@ -327,16 +352,24 @@ TODO add language icons
     border-bottom: solid 1px black;
 }
 
+.resume-education p {
+    font-size: 1rem;
+}
+
 .resume-objective {
     grid-column: 4 / 17;
     grid-row: 5 / 8;
     border-bottom: solid 1px black;
 }
 
-.resume-experience li,
-.resume-experience2 li {
-    font-size: 0.875rem;
+.resume-objective p {
+    font-size: 0.9375rem;
 }
+
+/* .resume-experience li,
+.resume-experience2 li {
+    font-size: 1rem;
+} */
 
 .resume-experience {
     grid-column: 4 / 17;
@@ -349,11 +382,16 @@ TODO add language icons
     padding-top: 0;
 }
 
-.resume-software,
+.resume-experience p,
+.resume-experience2 p {
+    font-size: 1rem;
+}
+
+/* .resume-software,
 .resume-skills,
 .resume-interests {
-    padding: 10px 10px 10px 0;
-}
+
+} */
 
 /* .resume-software ul,
 .resume-skills ul,
@@ -361,11 +399,6 @@ TODO add language icons
 
 } */
 
-.resume-software li,
-.resume-skills li,
-.resume-interests li {
-    font-size: 0.875rem;
-}
 
 .resume-languages {
     grid-column: 1 / 4;
@@ -374,66 +407,72 @@ TODO add language icons
     border-bottom: solid 1px black;
 }
 
+.resume-languages h2 {
+    font-size: 1.3rem;
+}
+
 .resume-languages ul {
     list-style: none;
     background-position: 0 50%;
-    line-height: 1.5;
     padding-left: 0;
 }
 
 .resume-languages li {
-    padding-left: 1.25rem;
+    padding-left: 1.75rem;
     background-repeat: no-repeat;
+    /* background-size: contain;  */
+    background-size: 1.5rem auto; 
+    font-size: 1.1rem;
+    line-height: 1.75;
 }
 
 .resume-python {
-    /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/python.png');
 }
 
 .resume-java {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/java.png');
 }
 
 .resume-cpp {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/cplusplus.png');
 }
 
 .resume-kotlin {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/kotlin.png');
 }
 
 .resume-html {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/html5-no-text.png');
 }
 
 .resume-javascript {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/javascript.png');
 }
 
 .resume-php {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/php-oval.png');
 
 }
 .resume-sql {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/database.png');
 }
 
 .resume-csharp {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/c-sharp.png');
 }
 
 .resume-matlab {
     /* padding-left: 1.25rem; */
-    background-image: url('./media/location.ico');
+    background-image: url('./media/matlab.png');
 }
 
 /* Resume page 2 */
@@ -443,23 +482,99 @@ TODO add language icons
     grid-row: 1 / 13;
 }
 
+/* .resume-experience2 p  {
+    font-size: 1rem;
+} */
+
+.resume-software li,
+.resume-skills li,
+.resume-interests li {
+    /* font-size: 0.875rem; */
+    font-size: 0.9375rem;
+}
+
 .resume-software {
     grid-column: 1 / 4;
-    grid-row: 1 / 9;
+    grid-row: 1 / 10;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
+}
+
+.resume-software ul {
+    list-style: none;
+    background-position: 0 50%;
+    padding-left: 0;
+}
+
+.resume-software li {
+    padding-left: 1.75rem;
+    background-repeat: no-repeat;
+    background-size: 1.5rem auto; 
+    line-height: 1.6;
+}
+
+.resume-android {
+    /* padding-left: 1.25rem; */
+    background-image: url('./media/android-head.png');
+}
+
+.resume .resume-git {
+    /* padding-left: 1.25rem; */
+    background-size: 1.4rem auto; 
+    background-image: url('./media/git.png');
+}
+
+.resume-jetbrains {
+    /* padding-left: 1.25rem; */
+    background-image: url('./media/pycharm.png');
+}
+
+.resume-linux {
+    /* padding-left: 1.25rem; */
+    background-image: url('./media/tux.png');
+}
+
+.resume-shell {
+    /* padding-left: 1.25rem; */
+    background-image: url('./media/bash-shell.png');
+}
+
+.resume-solidworks {
+    /* padding-left: 1.25rem; */
+    background-image: url('./media/solidworks.png');
+}
+
+.resume-vim {
+    /* padding-left: 1.25rem; */
+    background-image: url('./media/vim.png');
+}
+
+.resume-vscode {
+    /* padding-left: 1.25rem; */
+    background-image: url('./media/visual-studio.png');
+}
+
+.resume-wordpress {
+    /* padding-left: 1.25rem; */
+    background-image: url('./media/wordpress.png');
 }
 
 .resume-skills {
     grid-column: 1 / 4;
-    grid-row: 9 / 16;
+    grid-row: 10 / 17;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
 
+.resume-skills li {
+    /* font-size: 0.875rem; */
+    /* font-size: 0.9375rem; */
+    font-size: 0.906rem;
+}
+
 .resume-interests {
     grid-column: 1 / 4;
-    grid-row: 16 / 22;
+    grid-row: 17 / 22;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     margin-bottom: 0.5in;
@@ -472,6 +587,10 @@ TODO add language icons
     margin-bottom: 0.5in;
 }
 
+.resume-references p {
+    font-size: 1rem;
+}
+
 .resume-references ul {
     display: flex;
     padding-left: 0;
@@ -482,18 +601,19 @@ TODO add language icons
 
 .resume-references li {
     font-size: 0.875rem;
-    padding-left: 1.25rem;
+    padding-left: 1.5rem;
     background-position: 0 50%;
     background-repeat: no-repeat;
-    line-height: 2;
+    background-size: 1.5rem auto;
+    line-height: 1.75;
 }
 
 .resume-references li:nth-child(1) {
-    padding-left: 1rem;
-    background-image: url('./media/phone.ico');
+    /* padding-left: 1.5rem; */
+    background-image: url('./media/phone.png');
 }
 
 .resume-references li:nth-child(2) {
-    padding-left: 1.5rem;
-    background-image: url('./media/mail.ico');
+    padding-left: 2rem;
+    background-image: url('./media/email2.png');
 }
