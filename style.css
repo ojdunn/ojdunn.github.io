@@ -1,4 +1,20 @@
+/*
+Owen Dunn
+Style for personal website.
+*/
+
+/* 
+Increase consistancy between different browsers. Also fixes some problems with
+various browsers
+github.com/necolas/normalize.css 
+*/
+@import url("normalize.css") layer(normalize);
+
 /* Fonts */
+/* 
+Work Sans font from Google Fonts. It was converted to woff & woff2 with:
+https://www.fontsquirrel.com/tools/webfont-generator.
+*/
 @font-face {
     font-family: 'work-sans-regular';
     src: url('./fonts/worksans-variablefont_wght-webfont.woff2') format('woff2'),
@@ -88,9 +104,9 @@ header {
 }
 
 /* || nav */
-/* nav { */
+/* nav {
 
-/* } */
+} */
 
 nav ul {  /* sticky might be good */
     display: flex;
@@ -196,19 +212,12 @@ ANCI Letter sized:
 */
 
 .resume {
-    /* display: grid; */
-    /* grid-template-columns: repeat(16, minmax(0, 1fr)); */
-    /* grid-template-rows: repeat(21, minmax(0, 1fr)); */
-    /* gap: 10px; */
     background: white;
     color: black;
-    /* margin: 0; */
-    /* padding: 0; */
-    /* align-items: center; */
     /* ANCI Letter sized (2 pages) */
     width: 8.5in;
     /* height: 22in; */
-    margin: 0 auto;  /* center resume in viewport */
+    margin: 0 auto;
     font-family: 'work-sans-regular', serif;
 }
 
@@ -221,8 +230,28 @@ ANCI Letter sized:
     font-weight: bold;
 }
 
+.resume h1,
+.resume h2,
+.resume h3 {
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.resume h1 {
+    font-size: 2rem;
+}
+
+.resume h2 {
+    font-size: 1.375rem; /* 22px for 16pxrem */
+}
+
+/* .resume h3 {
+    font-size: 1.5rem;
+} */
+
 .resume-p1,
-.resume-p2 {
+.resume-p2 { /* Page 1, 2 of resume */
     display: grid;
     grid-template-columns: repeat(16, minmax(0, 1fr));
     grid-template-rows: repeat(21, minmax(0, 1fr));
@@ -230,11 +259,11 @@ ANCI Letter sized:
     /* ANCI Letter sized */
     /* width: 8.5in; */
     height: 11in;
-    margin: 0in 0.5in;
-    /* margin-top: 0.5in; */
-    /* Must put top margin here? conflict with nav? */
-    margin-bottom: 0.5in;  
-    padding-bottom: 0.5in;
+    /* margin: 0.5in 0.5in 0.5in 0.5in; */
+    /* margin-bottom: 0.5in;   */
+    margin: 0;
+    padding: 0.5in 0.5in 0.5in 0.5in;
+    /* padding-bottom: 0; */
 }
 
 /* .resume-p1 { */
@@ -246,27 +275,18 @@ ANCI Letter sized:
     margin-bottom: 0in;
 }
 
-.resume h1,
-.resume h2 {
-    margin: 0 0;
-    color: black;
-}
-
-.resume h1 {
-    /* font-size: 32px; */
-    padding: 0;
-}
-
-.resume h2 {
-    font-size: 1.375rem; /* 22px for 16pxrem */
-}
-
 .resume-inner {
     padding: 10px 0 10px 10px; /* No padding on right */
 }
 
 .resume-outer {
     padding: 10px 10px 10px 0; /* No padding on left */
+}
+
+.resume-header {
+    grid-column: 1 / 17;
+    grid-row: 1 / 4;
+    border-bottom: solid 1px black;
 }
 
 .resume-header ul {
@@ -312,14 +332,6 @@ ANCI Letter sized:
     background-image: url('./media/linkedin.png');
 }
 
-.resume-header {
-    grid-column: 1 / 17;
-    grid-row: 1 / 5;
-    /* Must put top margin here? conflict with nav? */
-    margin-top: 0.5in;  
-    border-bottom: solid 1px black;
-}
-
 /* .resume-inner ul, 
 .resume-outer ul {
     list-style: none;
@@ -347,7 +359,7 @@ ANCI Letter sized:
 
 .resume-education {
     grid-column: 1 / 4;
-    grid-row: 5 / 13;
+    grid-row: 4 / 11;
     border-right: 1px solid black;
     border-bottom: solid 1px black;
 }
@@ -358,12 +370,18 @@ ANCI Letter sized:
 
 .resume-objective {
     grid-column: 4 / 17;
-    grid-row: 5 / 8;
+    grid-row: 4 / 7;
     border-bottom: solid 1px black;
 }
 
 .resume-objective p {
-    font-size: 0.9375rem;
+    /* font-size: 0.9375rem; */
+    font-size: 1rem;
+}
+
+.resume-experience {
+    grid-column: 4 / 17;
+    grid-row: 7 / 22;
 }
 
 /* .resume-experience li,
@@ -371,15 +389,8 @@ ANCI Letter sized:
     font-size: 1rem;
 } */
 
-.resume-experience {
-    grid-column: 4 / 17;
-    grid-row: 8 / 22;
-}
-
-.resume-experience2 {
-    grid-column: 4 / 17;
-    grid-row: 8 / 22;
-    padding-top: 0;
+.resume-experience h2 {
+    margin-bottom: 1rem;
 }
 
 .resume-experience p,
@@ -399,16 +410,19 @@ ANCI Letter sized:
 
 } */
 
-
 .resume-languages {
     grid-column: 1 / 4;
-    grid-row: 13 / 22;
+    grid-row: 11 / 22;
     border-right: 1px solid black;
     border-bottom: solid 1px black;
 }
 
 .resume-languages h2 {
     font-size: 1.3rem;
+}
+
+.resume-languages p {
+    margin: 1rem 0;
 }
 
 .resume-languages ul {
@@ -422,8 +436,9 @@ ANCI Letter sized:
     background-repeat: no-repeat;
     /* background-size: contain;  */
     background-size: 1.5rem auto; 
-    font-size: 1.1rem;
-    line-height: 1.75;
+    font-size: 1.2rem;
+    /* line-height: 1.75; */
+    line-height: 2;
 }
 
 .resume-python {
@@ -480,6 +495,7 @@ ANCI Letter sized:
 .resume-experience2 {
     grid-column: 4 / 17;
     grid-row: 1 / 13;
+    padding-top: 10px;
 }
 
 /* .resume-experience2 p  {
@@ -490,12 +506,13 @@ ANCI Letter sized:
 .resume-skills li,
 .resume-interests li {
     /* font-size: 0.875rem; */
-    font-size: 0.9375rem;
+    /* font-size: 0.9375rem; */
+    font-size: 1rem;
 }
 
 .resume-software {
     grid-column: 1 / 4;
-    grid-row: 1 / 10;
+    grid-row: 1 / 11;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
@@ -561,7 +578,7 @@ ANCI Letter sized:
 
 .resume-skills {
     grid-column: 1 / 4;
-    grid-row: 10 / 17;
+    grid-row: 11 / 18;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
@@ -574,17 +591,19 @@ ANCI Letter sized:
 
 .resume-interests {
     grid-column: 1 / 4;
-    grid-row: 17 / 22;
+    grid-row: 18 / 22;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    margin-bottom: 0.5in;
+}
+
+.resume-interests li {
+    font-size: 0.9375rem;
 }
 
 .resume-references {
     grid-column: 4 / 17;
     grid-row: 13 / 22;
     border-top: 1px solid black;
-    margin-bottom: 0.5in;
 }
 
 .resume-references p {
@@ -600,7 +619,8 @@ ANCI Letter sized:
 }
 
 .resume-references li {
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
+    font-size: 1rem;
     padding-left: 1.5rem;
     background-position: 0 50%;
     background-repeat: no-repeat;
